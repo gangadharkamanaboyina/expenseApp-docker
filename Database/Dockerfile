@@ -1,5 +1,5 @@
 FROM mysql:8.0
-COPY DbConfig.js /var/lib/mysql
-COPY TransactionService.js /var/lib/mysql
+COPY db/ /docker-entrypoint-initdb.d
+ENV MYSQL_ROOT_PASSWORD=ExpenseApp@1
 
-# docker run --name mysql --network expense -e MYSQL_ROOT_PASSWORD=ExpenseApp@1 -d mysql:8.0
+# docker run --name mysql --network expense -d mysql:v1
