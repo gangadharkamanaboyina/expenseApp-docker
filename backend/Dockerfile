@@ -4,3 +4,4 @@ COPY /config .
 EXPOSE 8080
 RUN npm install
 ENV DB_HOST=mysql
+CMD ["node", "DbConfig.js"]
