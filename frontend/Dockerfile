@@ -1,8 +1,6 @@
 FROM nginx:latest
-
 RUN rm -rf /usr/share/nginx/html/*
-
-COPY content/ /usr/share/nginx/html/
-COPY static/ /usr/share/nginx/html/static/
-COPY expense.conf /etc/nginx/conf.d/expense.conf
-
+RUN rm -rf /etc/nginx/nginx.conf
+RUN rm -rf /etc/nginx/conf.d/default.conf
+COPY static /usr/share/nginx/html/
+COPY nginx.conf /etc/nginx/conf.d/nginx.conf
